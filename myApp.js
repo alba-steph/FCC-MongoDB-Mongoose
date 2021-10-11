@@ -1,6 +1,14 @@
 var mongoose = require("mongoose");
 require("dotenv").config();
 
+mongoose.connect(
+  "mongodb+srv://alba-fcc-db.f5fvg.mongodb.net/myFirstDatabase",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
+
 let Person;
 
 const createAndSavePerson = (done) => {
