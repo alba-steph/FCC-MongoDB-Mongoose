@@ -27,35 +27,6 @@ const createAndSavePerson = (done) => {
     done(null, data);
   });
 };
-// var personSchema = new mongoose.Schema({
-//   name: String,
-//   age: Number,
-//   favoriteFoods: [String]
-// });
-// var Person = mongoose.model('Person', personSchema);
-// var createAndSavePerson = function(done) {
-//   var janeFonda = new Person({name: "Tuulabear", age: 12, favoriteFoods: ["eggs", "fish", "fresh fruit"]});
-
-//   janeFonda.save(function(err, data) {
-//     if (err) return console.error(err);
-//     done(null, data)
-//   });
-// };
-
-// const createAndSavePerson = () => {
-//   const felicity = new Person({
-//     name: "Felicity",
-//     age: 18,
-//     favoriteFoods: ["Lucky Charms", "popcorn", "Brussels sprouts"],
-//   });
-//   felicity.save((err, data) => {
-//     if (err) {
-//       console.log(err);
-//     }
-//     console.log(data);
-//     return data;
-//   });
-// };
 
 const createManyPeople = (arrayOfPeople, done) => {
   done(null /*, data*/);
