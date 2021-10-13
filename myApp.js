@@ -24,9 +24,10 @@ const createAndSavePerson = (done) => {
     favoriteFoods: ["Lucky Charms", "popcorn", "Brussels sprouts"],
   });
   felicity.save((err, data) => {
+    console.log("error myApp.js", err, data);
     if (err) return console.error(err);
     console.log("success", data);
-    done(null, data);
+    return done(null, data);
   });
 };
 
