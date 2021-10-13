@@ -9,38 +9,38 @@ mongoose.connect(MONGO_URI, {
 });
 
 const Schema = mongoose.Schema;
-// const personSchema = new Schema({
-//   name: { type: String, required: true },
-//   age: Number,
-//   favoriteFoods: [String],
-// });
-// const Person = mongoose.model("Person", personSchema);
-
-// const createAndSavePerson = (done) => {
-//   const felicity = new Person({
-//     name: "Sally",
-//     age: 40,
-//     favoriteFoods: ["Lucky Charms", "popcorn", "Brussels sprouts"],
-//   });
-//   felicity.save((err, data) => {
-//     if (err) return console.error(err);
-//     done(null, data);
-//   });
-// };
-var personSchema = new mongoose.Schema({
-  name: String,
+const personSchema = new Schema({
+  name: { type: String, required: true },
   age: Number,
-  favoriteFoods: [String]
+  favoriteFoods: [String],
 });
-var Person = mongoose.model('Person', personSchema);
-var createAndSavePerson = function(done) {
-  var janeFonda = new Person({name: "Tuulabear", age: 12, favoriteFoods: ["eggs", "fish", "fresh fruit"]});
+const Person = mongoose.model("Person", personSchema);
 
-  janeFonda.save(function(err, data) {
+const createAndSavePerson = (done) => {
+  const felicity = new Person({
+    name: "Felicity Love",
+    age: 19,
+    favoriteFoods: ["Lucky Charms", "popcorn", "Brussels sprouts"],
+  });
+  felicity.save((err, data) => {
     if (err) return console.error(err);
-    done(null, data)
+    done(null, data);
   });
 };
+// var personSchema = new mongoose.Schema({
+//   name: String,
+//   age: Number,
+//   favoriteFoods: [String]
+// });
+// var Person = mongoose.model('Person', personSchema);
+// var createAndSavePerson = function(done) {
+//   var janeFonda = new Person({name: "Tuulabear", age: 12, favoriteFoods: ["eggs", "fish", "fresh fruit"]});
+
+//   janeFonda.save(function(err, data) {
+//     if (err) return console.error(err);
+//     done(null, data)
+//   });
+// };
 
 // const createAndSavePerson = () => {
 //   const felicity = new Person({
