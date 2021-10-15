@@ -1,8 +1,7 @@
-const mongoose = require("mongoose");
 require("dotenv").config();
 
+const mongoose = require("mongoose");
 const MONGO_URI = process.env.MONGO_URI;
-
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -42,14 +41,14 @@ const arrayOfPeople = [
     name: "Sebastian",
     age: 21,
     favoriteFoods: [
-      "spinach salad with godess dressing",
+      "spinach salad with goddess dressing",
       "chicken tikka masala",
       "hard boiled egg",
     ],
   },
   {
     name: "Chris",
-    age: 45,
+    age: 44,
     favoriteFoods: [
       "bread and butter",
       "chickenless tacos",
@@ -66,7 +65,10 @@ const createManyPeople = (arrayOfPeople, done) => {
 };
 
 const findPeopleByName = (personName, done) => {
-  done(null /*, data*/);
+  Person.find({ name: personName }, (err, personFound) => {
+    if (err) return console.error(err);
+    done(null, personFound);
+  });
 };
 
 const findOneByFood = (food, done) => {
